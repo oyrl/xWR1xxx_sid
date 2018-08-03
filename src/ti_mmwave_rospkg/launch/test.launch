@@ -1,0 +1,26 @@
+<!--
+	This file will launch rviz (or not) along with the mmWave sensor node and configure a TI mmWave 1443 sensor using a 3D config
+-->
+
+<launch>
+	<arg name="range_cfg" value="20"/>
+	<arg name="dimension_cfg" value="3d"/>
+
+	<include file="$(find ti_mmwave_rospkg)/launch/t0.launch">
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+	<include file="$(find ti_mmwave_rospkg)/launch/t1.launch">
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+	<include file="$(find ti_mmwave_rospkg)/launch/t2.launch">
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+
+	<node pkg="tf" type="static_transform_publisher" name="TI_0_to_sensorbase" args="-0.1 0.1 0 2.77 0 0 /velodyne /ti_0_frame 100" />
+	<node pkg="tf" type="static_transform_publisher" name="TI_1_to_sensorbase" args="-0.1 0.1625 -0.45 2.15 0 0 /velodyne /ti_1_frame 100" />
+	<node pkg="tf" type="static_transform_publisher" name="TI_2_to_sensorbase" args="0.15 0.12 0 1.375 0 0 /velodyne /ti_2_frame 100" />
+</launch>
+
