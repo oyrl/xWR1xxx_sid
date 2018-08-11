@@ -5,6 +5,7 @@ Based on TI mmWave ROS Driver, Still In Development
 Please refer to TI mmWave ROS Driver Setup Guide
 
 # How to run
++ Modify the tf arguments in test.launch
 + Modify the t$(device_number).launch file, if default ports are not suitable.
 + Modify test.launch and add the t$(device_number).launch file to extend more device.
 
