@@ -3,7 +3,7 @@
 -->
 
 <launch>
-	<arg name="range_cfg" value="20"/>
+	<arg name="range_cfg" value="50"/>
 	<arg name="dimension_cfg" value="3d"/>
 
 	<include file="$(find ti_mmwave_rospkg)/launch/t0.launch">
