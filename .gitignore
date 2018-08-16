@@ -50,7 +50,7 @@ qtcreator-*
 # Catkin custom files
 CATKIN_IGNORE
 
-# tmp configuration file
+# test file
 src/ti_mmwave_rospkg/cfg/0_2d
 src/ti_mmwave_rospkg/cfg/0_3d
-src/ti_mmwave_rospkg/cfg/test
+src/ti_mmwave_rospkg/cfg/history

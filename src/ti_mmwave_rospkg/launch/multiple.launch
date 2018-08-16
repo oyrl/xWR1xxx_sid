@@ -1,0 +1,35 @@
+<!--
+	This file will launch multiple TI mmWave sensors using a 3D or 2D config
+-->
+
+<launch>
+	<arg name="range_cfg" value="35"/>
+	<arg name="dimension_cfg" value="3d"/>
+
+	<include file="$(find ti_mmwave_rospkg)/launch/multiple/0.launch">
+		<arg name="device_number" value="0"/>
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+	<include file="$(find ti_mmwave_rospkg)/launch/multiple/1.launch">
+		<arg name="device_number" value="1"/>
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+	<include file="$(find ti_mmwave_rospkg)/launch/multiple/2.launch">
+		<arg name="device_number" value="2"/>
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+	<include file="$(find ti_mmwave_rospkg)/launch/multiple/3.launch">
+		<arg name="device_number" value="3"/>
+		<arg name="range" value="$(arg range_cfg)"/>
+		<arg name="dimension" value="$(arg dimension_cfg)"/>
+	</include>
+
+	<node pkg="tf" type="static_transform_publisher" name="TI_0_to_sensorbase" args="-0.2 0.1 -0.45 2.77 0 0 /velodyne /ti_0_frame 100" />
+	<node pkg="tf" type="static_transform_publisher" name="TI_1_to_sensorbase" args="-0.16 0.2 -0.45 2.15 0 0 /velodyne /ti_1_frame 100" />
+	<node pkg="tf" type="static_transform_publisher" name="TI_2_to_sensorbase" args="0 0.2 -0.45 1.375 0 0 /velodyne /ti_2_frame 100" />
+	<node pkg="tf" type="static_transform_publisher" name="TI_3_to_sensorbase" args="-0.08 0.15 -0.2 2.15 0 0 /velodyne /ti_3_frame 100" />
+</launch>
+

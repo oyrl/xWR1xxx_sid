@@ -1,18 +1,19 @@
 # xWR1xxx_sid
 Based on TI mmWave ROS Driver, Still In Development
 
+
 # How to build
 Please refer to TI mmWave ROS Driver Setup Guide
 
 # How to run
-+ Modify the tf arguments in test.launch
-+ Modify the t$(device_number).launch file, if default ports are not suitable.
-+ Modify test.launch and add the t$(device_number).launch file to extend more device.
++ Modify the tf arguments in src/ti_mmwave_rospkg/launch/multiple.launch
++ Modify the src/ti_mmwave_rospkg/launch/multiple/$(device_number).launch file, if default ports are not suitable
++ Modify src/ti_mmwave_rospkg/launch/multiple.launch and add the src/ti_mmwave_rospkg/launch/multiple/$(device_number).launch file to extend more device
 
-`roslaunch ti_mmwave_rospkg test.launch`
+`roslaunch ti_mmwave_rospkg multiple.launch`
 
 # How to switch to a different configuration
-+ Modify the value of range_cfg and dimension_cfg in test.launch file
++ Modify the value of range_cfg and dimension_cfg in multiple.launch file
 + Add the cfg file
 
 NOTE: The EVM must be power cycled or reset when switching from a 3-D configuration to a
