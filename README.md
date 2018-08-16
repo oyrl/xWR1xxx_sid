@@ -1,7 +1,6 @@
 # xWR1xxx_sid
 Based on TI mmWave ROS Driver, Still In Development
 
-
 Multi-device support (based on FDM)
 
 # How to build
